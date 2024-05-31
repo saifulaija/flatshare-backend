@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "H:\\PROJECTS\\FlatShare\\flat-share-server\\logs\\winston\\successes\\.b0d147537b2963cbb148f5a6cd68665a8cb3d024-audit.json",
+    "files": [
+        {
+            "date": 1717171060526,
+            "name": "H:\\PROJECTS\\FlatShare\\flat-share-server\\logs\\winston\\successes\\phu-2024-31-05-21-success.log",
+            "hash": "e229d98ae41d0ff1655947fcac1afef84e72ca4552155be8427611a6442d793d"
+        }
+    ],
+    "hashType": "sha256"
+}

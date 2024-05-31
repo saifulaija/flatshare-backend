@@ -1,0 +1,60 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\.09ecf39e413a03384906dfb8e7b725490b5014fe-audit.json",
+    "files": [
+        {
+            "date": 1717008182963,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-30-05-00-error.log",
+            "hash": "14ead2216cd9ff7b94ce1e0e5607260b1a6077c2d2691641cf4f85254a69ce76"
+        },
+        {
+            "date": 1717043774448,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-30-05-10-error.log",
+            "hash": "ec0c5f9b0f43c3ebb1f73b1d1d0125f33f1f5aed2b73ed581b3663b8c255a884"
+        },
+        {
+            "date": 1717049017400,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-30-05-12-error.log",
+            "hash": "9b9671e228ecfdbc158485181567b072d4abca50f7bfd3e994554cc57c1761a4"
+        },
+        {
+            "date": 1717060127984,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-30-05-15-error.log",
+            "hash": "5c10d6055ffc3307df922c5c72e75af35f06a65ab3d6b1f3e7d870672dacf5a1"
+        },
+        {
+            "date": 1717076017484,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-30-05-19-error.log",
+            "hash": "889d06d3883a79705144a3c4908a0aa87ac9618331d486ffc4ffc9f1067e560e"
+        },
+        {
+            "date": 1717081611036,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-30-05-21-error.log",
+            "hash": "4e3b9f2141c8275614b405f9ea37f682e458bc0b5077998799fd41c68152843d"
+        },
+        {
+            "date": 1717132933365,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-31-05-11-error.log",
+            "hash": "671f7675a95ab6a4aacbd2cc9569cb3c615dd8f7d82d3c269f8a23b25b578556"
+        },
+        {
+            "date": 1717139143442,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-31-05-13-error.log",
+            "hash": "34eb7f4d94e931c9750db1dcc99a7403ef5aabb6bf58a5509985fd6e8f35856a"
+        },
+        {
+            "date": 1717151879618,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-31-05-16-error.log",
+            "hash": "3eb897ea722a5d6abed50f32b4b27ee66dc279544aeae640b347cf568f85a1b6"
+        },
+        {
+            "date": 1717153255387,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\errors\\phu-2024-31-05-17-error.log",
+            "hash": "2de9725a3eca4c9041ddafe98a02f20c7405d03875129da071bcbd8c520ad6c4"
+        }
+    ],
+    "hashType": "sha256"
+}

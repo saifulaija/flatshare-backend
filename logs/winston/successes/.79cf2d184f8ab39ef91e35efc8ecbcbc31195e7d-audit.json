@@ -1,0 +1,60 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\.79cf2d184f8ab39ef91e35efc8ecbcbc31195e7d-audit.json",
+    "files": [
+        {
+            "date": 1717008182940,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-30-05-00-success.log",
+            "hash": "0019a431487bb3e8a273a7ed6a4fbc4f4e503e39d36cfd458a10303825c9acaa"
+        },
+        {
+            "date": 1717043774434,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-30-05-10-success.log",
+            "hash": "bb1b93a8f835472491d1cc78c6d0181bd63606e35aa3bcd5243247d37fa3def1"
+        },
+        {
+            "date": 1717049017379,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-30-05-12-success.log",
+            "hash": "4c6f24efe70ab83c783fd9810eb20a0e46d17113f8146c5c7f2175bfc1d995b5"
+        },
+        {
+            "date": 1717060127966,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-30-05-15-success.log",
+            "hash": "a724088be8c64593ecff6a795b7b70559831054f92d30409787610403efdaabe"
+        },
+        {
+            "date": 1717076017459,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-30-05-19-success.log",
+            "hash": "21eef2a11e620c08dbd7d23bdba7194aa1f1f48bcfcc6df31728067024abf369"
+        },
+        {
+            "date": 1717081611010,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-30-05-21-success.log",
+            "hash": "f50ccb3436d16ab1af2fabc71710f75d1e95744d2bb7e51b3be93fb7b219a797"
+        },
+        {
+            "date": 1717132933277,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-31-05-11-success.log",
+            "hash": "a8ba874cc44706b6240e8930b59586935e6c945cb3c9b8b78089f6f7957efed4"
+        },
+        {
+            "date": 1717139143433,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-31-05-13-success.log",
+            "hash": "918e9f423ce3b01175fff6413d39fd9a9cf732f34ab8958217252ca018984acf"
+        },
+        {
+            "date": 1717151879501,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-31-05-16-success.log",
+            "hash": "1cb6d0ba132d7a37fc740c76f66c162433acf390bca58b9bd6f78e0b162ad759"
+        },
+        {
+            "date": 1717153255364,
+            "name": "H:\\fullstack\\Flat-Share\\flat-share-server-final\\logs\\winston\\successes\\phu-2024-31-05-17-success.log",
+            "hash": "be9802c2b284850e920016c6b85d35544308ac95f47b539ebe6a25e14d876654"
+        }
+    ],
+    "hashType": "sha256"
+}

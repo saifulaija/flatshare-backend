@@ -1,0 +1,149 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Status {
+  PENDING
+  BOOKED
+  REJECTED
+}
+
+enum User_Sattus {
+  ACTIVE
+  DEACTIVE
+}
+
+enum UserRole {
+  ADMIN
+  USER
+}
+
+model User {
+  id                     String        @id @default(uuid())
+  userName               String
+  role                   UserRole      @default(USER)
+  email                  String        @unique
+  password               String
+  profilePhoto           String?
+  status                 User_Sattus   @default(ACTIVE)
+  isDeleted              Boolean       @default(false)
+  passwordChangeRequired Boolean?      @default(true)
+  createdAt              DateTime      @default(now())
+  updatedAt              DateTime      @updatedAt
+  userProfile            UserProfile?
+  booking                Booking[]
+  AdminProfile           AdminProfile?
+  flat                   Flat[]
+  @@map("user")
+}
+
+model Flat {
+  id String @id @default(uuid())
+
+  location      String
+  description   String
+  rentAmount    String
+  bedRooms      String
+  space         String
+  availability  Boolean        @default(true)
+  amenities     String
+  advanceAmount String
+  userId        String
+  user          User           @relation(fields: [userId], references: [id])
+  isDeleted     Boolean        @default(false)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  booking       Booking[]
+  image         Image[]
+  Request_Flat  Request_Flat[]
+
+  @@map("flats")
+}
+
+model Image {
+  id     String @id @default(uuid())
+  url    String
+  flatId String
+  flat   Flat   @relation(fields: [flatId], references: [id])
+}
+
+model Booking {
+  id String @id @default(uuid())
+
+  flatId    String
+  flat      Flat     @relation(fields: [flatId], references: [id])
+  userId    String
+  user      User     @relation(fields: [userId], references: [id])
+  isDeleted Boolean  @default(false)
+  status    Status   @default(PENDING)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("booking")
+}
+
+model Request_Flat {
+  id                    String @id @default(uuid())
+  userName              String
+  email                 String
+  profession            String
+  contactNumber         String
+  address               String
+  additionalInformation String
+  termsAndCondition     String
+  flattId   String
+  flat      Flat     @relation(fields: [flattId], references: [id])
+  isDeleted Boolean  @default(false)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("request_flats")
+
+}
+
+model UserProfile {
+  id            String   @id @default(uuid())
+  userName      String
+  email         String
+  role          UserRole
+  bio           String?
+  profession    String?
+  profilePhoto  String?
+  address       String?
+  contactNumber String?
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id])
+  isDeleted     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("userProfile")
+}
+
+model AdminProfile {
+  id            String   @id @default(uuid())
+  userName      String
+  email         String
+  role          UserRole
+  profilePhoto  String?
+  address       String?
+  contactNumber String?
+  userId        String   @unique
+  user          User     @relation(fields: [userId], references: [id])
+  isDeleted     Boolean  @default(false)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  @@map("adminProfile")
+}

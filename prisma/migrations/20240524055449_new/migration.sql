@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "flats" ALTER COLUMN "rentAmount" SET DATA TYPE TEXT,
+ALTER COLUMN "advanceAmount" SET DATA TYPE TEXT;
