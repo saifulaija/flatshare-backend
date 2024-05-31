@@ -1,31 +1,8 @@
 "use strict";
-// import express, { Application, NextFunction, Request, Response } from "express";
-// import cors from "cors";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-// import router from "./app/routes";
-// import globalErrorHandler from "./app/middlewares/globalErrorHandler";
-// // import cookieParser from 'cookie-parser'
-// // import globalErrorhandler from "./app/middlewares/globalErrorHandler";
-// // import notFounRoute from "./app/middlewares/notFoundRoute";
-// const app: Application = express();
-// app.use(cors());
-// // app.use(cookieParser())
-// //parser
-// app.use(express.json());
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-// app.get("/", (req: Request, res: Response) => {
-//   res.send({
-//     message: " Flat share server",
-//   });
-// });
-// app.use("/api", router);
-// app.use(globalErrorHandler)
-// // app.use(notFounRoute)
-// export default app;
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
