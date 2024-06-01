@@ -45,6 +45,7 @@ model User {
   booking                Booking[]
   AdminProfile           AdminProfile?
   flat                   Flat[]
+
   @@map("user")
 }
 
@@ -81,20 +82,21 @@ model Image {
 model Booking {
   id String @id @default(uuid())
 
-  flatId    String
-  flat      Flat     @relation(fields: [flatId], references: [id])
-  userId    String
-  user      User     @relation(fields: [userId], references: [id])
-  isDeleted Boolean  @default(false)
-  status    Status   @default(PENDING)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  flatId       String
+  flat         Flat           @relation(fields: [flatId], references: [id])
+  userId       String
+  user         User           @relation(fields: [userId], references: [id])
+  isDeleted    Boolean        @default(false)
+  status       Status         @default(PENDING)
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  request_Flat Request_Flat[]
 
   @@map("booking")
 }
 
 model Request_Flat {
-  id                    String @id @default(uuid())
+  id                    String   @id @default(uuid())
   userName              String
   email                 String
   profession            String
@@ -102,14 +104,15 @@ model Request_Flat {
   address               String
   additionalInformation String
   termsAndCondition     String
-  flattId   String
-  flat      Flat     @relation(fields: [flattId], references: [id])
-  isDeleted Boolean  @default(false)
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  bookingId             String
+  booking               Booking  @relation(fields: [bookingId], references: [id])
+  flattId               String
+  flat                  Flat     @relation(fields: [flattId], references: [id])
+  isDeleted             Boolean  @default(false)
+  createdAt             DateTime @default(now())
+  updatedAt             DateTime @updatedAt
 
   @@map("request_flats")
-
 }
 
 model UserProfile {

@@ -5,7 +5,7 @@ import { flatSearchableFields } from "./flat.constant";
 import AppError from "../../errors/AppError";
 import httpStatus from "http-status";
 
-const createFlatIntoDB = async (payload: Flat & {image:any}, user: any) => {
+const createFlatIntoDB = async (payload: Flat & { image: any }, user: any) => {
   const { image, ...payloadDta } = payload;
 
   console.log(payloadDta);
@@ -199,6 +199,12 @@ const getSingleFlat = async (id: string) => {
     },
     include: {
       image: true,
+      Request_Flat: {
+        include: {
+          booking: true,
+        },
+      },
+
       user: {
         include: {
           userProfile: true,

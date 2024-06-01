@@ -10,7 +10,7 @@
 
 ## Overview
 
-**FlatShare Backend** is the server-side application for the FlatShare platform. This backend service handles user authentication and CRUD operations for flat sharing. It is built using Node.js and Express, with PostgreSQL as the database and Prisma as the ORM.
+**FlatShare Backend** is the server-side application for the FlatShare platform. This backend service handles user authentication and CRUD operations for flat sharing. It is built using Node.js and Express, with PostgreSQL as the database and Prisma as the ORM most powerful.
 
 ### Features
 

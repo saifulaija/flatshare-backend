@@ -25,6 +25,7 @@ const createBookingIntoDB = async (payload: any, user: any) => {
     const createRequestFlat = await tx.request_Flat.create({
       data: {
         userName: payload.userName,
+
         email: payload.email,
         profession: payload.profession,
         contactNumber: payload.contactNumber,
@@ -32,6 +33,7 @@ const createBookingIntoDB = async (payload: any, user: any) => {
         additionalInformation: payload.additionalInformation,
         termsAndCondition: payload.termsAndCondition,
         flattId: payload.flatId,
+        bookingId:createBooking.id
       },
     });
 
@@ -66,6 +68,7 @@ const updateBookingIntoDB = async (
   const result = await prisma.booking.update({
     where: {
       id: bookingId,
+      flatId:payload.flatId
     },
     data: payload,
   });
