@@ -65,6 +65,7 @@ const loginUser = (payload) => __awaiter(void 0, void 0, void 0, function* () {
         userName: userData.userName,
         email: userData.email,
         role: userData.role,
+        profilePhoto: userData.profilePhoto
     }, config_1.default.jwt.jwt_secret, config_1.default.jwt.expires_in);
     console.log(accessToken);
     const refreshToken = jwtHelpers_1.jwtHelpers.generateToken({
@@ -96,6 +97,7 @@ const refreshToken = (token) => __awaiter(void 0, void 0, void 0, function* () {
         userName: userData.userName,
         email: userData.email,
         role: userData.role,
+        profilePhoto: userData.profilePhoto
     }, config_1.default.jwt.jwt_secret, config_1.default.jwt.expires_in);
     return {
         accessToken,

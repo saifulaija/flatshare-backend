@@ -1,85 +1,90 @@
-# Flat Share Application 
-Flat Share Application is a web application designed to facilitate the process of finding and renting shared accommodation. It allows users to list available flats, search for flats based on various criteria, book flats, and manage their profiles. The application is built using TypeScript, Express.js, Prisma for PostgreSQL, and JWT for authentication.
+# FlatShare Backend
 
-## Live URL
 
-[Visit Blood Donation Application](https://flat-share-server.vercel.app/)
 
-## Features
+[![Website](https://img.shields.io/website-up-down-green-red/https/server-room-share.vercel.app.svg)](https://server-room-share.vercel.app)
+[![Node.js](https://img.shields.io/badge/Node.js-JavaScript%20Runtime-green)](https://nodejs.org/)
+[![Express](https://img.shields.io/badge/Express-Web%20Framework-blue)](https://expressjs.com/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-blue)](https://www.postgresql.org/)
+[![Prisma](https://img.shields.io/badge/Prisma-ORM-brightgreen)](https://www.prisma.io/)
 
-1. *User Registration*: Users can register on the platform providing necessary details including name, email, password, blood type, location, age, and last donation date.
-2. *User Login*: Registered users can securely log in using their email and password.
-3. *Find Flat*: Users can search for flats based on various criteria such as location, address, name. The results are paginated and sortable.
+## Overview
 
-4. *View and Update Profile*: Users can view and update their profile information including bio, age, and last donation date.
-5. *Error Handling*: Comprehensive error handling mechanisms are in place, providing detailed responses for validation errors, general errors, and unauthorized access attempts.
+**FlatShare Backend** is the server-side application for the FlatShare platform. This backend service handles user authentication and CRUD operations for flat sharing. It is built using Node.js and Express, with PostgreSQL as the database and Prisma as the ORM.
 
-## Technology Used
+### Features
 
-- *Programming Language*: TypeScript
-- *Web Framework*: Express.js
-- *Object Relational Mapping (ORM)*: Prisma for PostgreSQL
-- *Authentication*: JWT (JSON Web Tokens)
+- **User Authentication:** Secure login and registration APIs.
+- **Flat Management:** APIs for creating, reading, updating, and deleting flat listings.
+- **Database Management:** PostgreSQL for robust data storage and Prisma as ORM for efficient database operations.
 
-## Running the Application Locally
+## Technology Stack
 
-To run Blood Donation Application locally, follow these steps:
+- **Node.js:** JavaScript runtime built on Chrome's V8 JavaScript engine.
+- **Express:** Minimal and flexible Node.js web application framework.
+- **PostgreSQL:** Powerful, open-source object-relational database system.
+- **Prisma:** Next-generation ORM that helps to query a database in an efficient, type-safe, and easy-to-use way.
 
-1. *Clone the Repository*: Clone the Blood Donation Application repository to your local machine using Git:
+## Getting Started
 
-    bash
-    git clone  https://github.com/Porgramming-Hero-web-course/l2-b2-fullstack-track-assignment-8-saifulaija
-    
+To get started with the development or deployment of the FlatShare Backend, follow these steps:
 
-2. *Install Dependencies*: Navigate to the project directory and install dependencies using npm or yarn:
+### Prerequisites
 
-    bash
-    cd l2-b2-fullstack-track-assignment-8-saifulaija
+Ensure you have the following software installed:
+
+- [Node.js](https://nodejs.org/) (v14 or later)
+- [npm](https://www.npmjs.com/) or [Yarn](https://yarnpkg.com/)
+- [PostgreSQL](https://www.postgresql.org/) (if running locally)
+
+### Installation
+
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/saifulaija/flatshare-backend.git
+    cd flatshare-backend
+    ```
+
+2. **Install dependencies:**
+
+    ```bash
     npm install
-    
-
-    or
-
-    bash
-    cd l2-b2-fullstack-track-assignment-8-saifulaija
+    # or
     yarn install
-    
+    ```
 
-3. *Set Up Environment Variables*: Create a .env file in the root directory of the project and add the following environment variables:
+3. **Set up environment variables:**
 
-    plaintext
-    DATABASE_URL=your_postgres_database_url
-    JWT_SECRET=your_jwt_secret_key
-    
+    Create a `.env` file in the root of the project and add your environment variables:
 
-    Replace your_postgres_database_url with the URL of your PostgreSQL database and your_jwt_secret_key with a secret key for JWT token encryption.
+    ```env
+    DATABASE_URL="postgresql://username:password@localhost:5432/mydatabase"
+    JWT_SECRET="your_jwt_secret"
+    ```
 
-4. *Database Migration*: Run Prisma migration to apply database schema changes:
+4. **Run database migrations:**
 
-    bash
-    npx prisma migrate dev 
-    
+    ```bash
+    npx prisma migrate dev
+    ```
 
-5. *Start the Server*: Start the development server:
+5. **Start the server:**
 
-    bash
-    npm run dev
-    
+    ```bash
+    npm start
+    # or
+    yarn start
+    ```
 
-    or
+## Contributing
 
-    bash
-    yarn dev
-    
+We welcome contributions from the community. To contribute, please fork the repository, create a new branch, and submit a pull request. Ensure your code follows the project's coding standards and includes relevant tests.
 
-6. *Access the Application*: Once the server is running, you can access the Blood Donation Application application locally at [http://localhost:3000](http://localhost:3000).
+## License
 
-7. *Explore the API*: Use API endpoints to interact with the application. Refer to the API documentation for available endpoints and request/response formats.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for more information.
 
-## Additional Information
+---
 
-- The application follows RESTful API design principles for its endpoints.
-- Global error handling middleware ensures consistent error responses throughout the application.
-- User authentication is secured using JWT tokens, ensuring a scalable and secure authentication mechanism.
-- PostgreSQL is used as the database for storing user and donation request data.
-- Detailed API documentation is provided for easy integration with the platform.
+For more details, visit the [FlatShare Backend Repository](https://github.com/saifulaija/flatshare-backend).

@@ -1,6 +1,6 @@
 "use strict";
-// import { NextFunction, Request, Response } from "express";
-// import httpStatus from "http-status";
+// // import { NextFunction, Request, Response } from "express";
+// // import httpStatus from "http-status";
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
@@ -8,17 +8,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = __importDefault(require("../../config"));
 const client_1 = require("@prisma/client");
 const zod_1 = require("zod");
-const logger_1 = require("../../shared/logger");
 const handleValidationError_1 = __importDefault(require("../errors/handleValidationError"));
 const zodError_1 = __importDefault(require("../errors/zodError"));
 const handleClientError_1 = __importDefault(require("../errors/handleClientError"));
 const AppError_1 = __importDefault(require("../errors/AppError"));
 const globalErrorHandler = (error, req, res, next) => {
-    config_1.default.env === 'development'
-        ? console.log(`🐱‍🏍 globalErrorHandler ~~`, { error })
-        : logger_1.errorlogger.error(`🐱‍🏍 globalErrorHandler ~~`, error);
+    if (config_1.default.env === 'development') {
+        console.log(` globalErrorHandler ~~`, { error });
+    }
     let statusCode = 500;
-    let message = 'Something went wrong !';
+    let message = 'Something went wrong!';
     let errorMessages = [];
     if (error instanceof client_1.Prisma.PrismaClientValidationError) {
         const simplifiedError = (0, handleValidationError_1.default)(error);

@@ -47,6 +47,7 @@ const loginUser = async (payload: { email: string; password: string }) => {
       userName: userData.userName,
       email: userData.email,
       role: userData.role,
+      profilePhoto:userData.profilePhoto
     },
     config.jwt.jwt_secret as Secret,
     config.jwt.expires_in as string
@@ -95,6 +96,7 @@ const refreshToken = async (token: string) => {
       userName: userData.userName,
       email: userData.email,
       role: userData.role,
+      profilePhoto:userData.profilePhoto
      
     },
     config.jwt.jwt_secret as Secret,
