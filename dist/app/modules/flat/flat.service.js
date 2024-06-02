@@ -191,6 +191,12 @@ const getSingleFlat = (id) => __awaiter(void 0, void 0, void 0, function* () {
         },
         include: {
             image: true,
+            booking: true,
+            Request_Flat: {
+                include: {
+                    booking: true,
+                },
+            },
             user: {
                 include: {
                     userProfile: true,

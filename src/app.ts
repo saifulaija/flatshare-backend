@@ -1,13 +1,13 @@
 import express, { Application, Request, Response, NextFunction } from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
-import httpStatus from "http-status";
+
 import globalErrorHandler from "./app/middlewares/globalErrorHandler";
 import router from "./app/routes";
 
 const app: Application = express();
 
-app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+app.use(cors({ origin: "https://room-share.vercel.app", credentials: true }));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

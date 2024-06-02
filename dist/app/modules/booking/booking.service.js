@@ -37,6 +37,7 @@ const createBookingIntoDB = (payload, user) => __awaiter(void 0, void 0, void 0,
                 additionalInformation: payload.additionalInformation,
                 termsAndCondition: payload.termsAndCondition,
                 flattId: payload.flatId,
+                bookingId: createBooking.id
             },
         });
         return createBooking;
@@ -63,6 +64,7 @@ const updateBookingIntoDB = (bookingId, payload) => __awaiter(void 0, void 0, vo
     const result = yield prisma_1.default.booking.update({
         where: {
             id: bookingId,
+            flatId: payload.flatId
         },
         data: payload,
     });

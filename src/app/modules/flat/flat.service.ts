@@ -199,6 +199,7 @@ const getSingleFlat = async (id: string) => {
     },
     include: {
       image: true,
+      booking:true,
       Request_Flat: {
         include: {
           booking: true,
