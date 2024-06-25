@@ -81,6 +81,8 @@ const getUserWithProfileFromDB = async (user: any) => {
 };
 
 const updateMyProfile = async (authUser: any, payload: any) => {
+
+  console.log(payload)
   const userData = await prisma.user.findUniqueOrThrow({
     where: {
       email: authUser.email,
@@ -88,41 +90,94 @@ const updateMyProfile = async (authUser: any, payload: any) => {
     },
   });
 
-  console.log(userData, payload);
 
-  let profileData;
-  if (userData?.role === UserRole.ADMIN || userData?.role === UserRole.USER) {
-    profileData = await prisma.$transaction(async (tx) => {
-      const updateProfile = await tx.userProfile.update({
-        where: {
-          userId: authUser.userId,
-        },
-        data: payload,
-      });
-
-      const userDataUpdate = await tx.user.update({
-        where: {
-          id: authUser.userId,
-        },
-        data: {
-          userName: payload.userName,
-          email: payload.email,
-          profilePhoto: payload.profilePhoto,
-        },
-      });
-
-      return { updateProfile, userDataUpdate };
-    });
-  } else {
-    throw new Error("Invalid user role");
+  if(payload.profilePhoto){
+    await prisma.user.update({
+      where:{
+        id:userData.id
+      },
+      data:{
+        profilePhoto:payload.profilePhoto
+      }
+    })
+  }
+  if(payload.userName){
+    await prisma.user.update({
+      where:{
+        id:userData.id
+      },
+      data:{
+        userName:payload.userName
+      }
+    })
+  }
+  if(payload.email){
+    await prisma.user.update({
+      where:{
+        id:userData.id
+      },
+      data:{
+        email:payload.email
+      }
+    })
   }
 
-  return {
-    ...userData,
-    ...profileData.updateProfile,
-    ...profileData.userDataUpdate,
-  };
+  console.log(userData, 'payload', payload);
+
+  let profileData;
+if(userData.role === UserRole.ADMIN || userData.role === UserRole.USER){
+  profileData = await prisma.userProfile.update({
+    where:{
+    userId:authUser.userId
+    },
+    data:payload
+  })
+}
+
 };
+// const updateMyProfile = async (authUser: any, payload: any) => {
+//   const userData = await prisma.user.findUniqueOrThrow({
+//     where: {
+//       email: authUser.email,
+//       status: User_Sattus.ACTIVE,
+//     },
+//   });
+
+//   console.log(userData, payload);
+
+//   let profileData;
+//   if (userData?.role === UserRole.ADMIN || userData?.role === UserRole.USER) {
+//     profileData = await prisma.$transaction(async (tx) => {
+//       const updateProfile = await tx.userProfile.update({
+//         where: {
+//           userId: authUser.userId,
+//         },
+//         data: payload,
+//       });
+
+//       const userDataUpdate = await tx.user.update({
+//         where: {
+//           id: authUser.userId,
+//         },
+//         data: {
+//           userName: payload.userName,
+//           email: payload.email,
+//           profilePhoto: payload.profilePhoto,
+//         },
+//       });
+
+//       return { updateProfile, userDataUpdate };
+//     });
+//   } else {
+//     throw new Error("Invalid user role");
+//   }
+
+//   return {
+//     ...userData,
+//     ...profileData.updateProfile,
+//     ...profileData.userDataUpdate,
+//   };
+// };
 
 
 
