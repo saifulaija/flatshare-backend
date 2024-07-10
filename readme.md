@@ -87,4 +87,4 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 
 ---
 
-For more details, visit the [FlatShare Backend Repository](https://github.com/saifulaija/flatshare-backend).
+
